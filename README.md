@@ -1,4 +1,5 @@
 # README
+This is a RoR project to mimic the Eventbrite signup web-app functionality as described in https://www.theodinproject.com/lessons/ruby-on-rails-private-events
 
 This README would normally document whatever steps are necessary to get the
 application up and running.

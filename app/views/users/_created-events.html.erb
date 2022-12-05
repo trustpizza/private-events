@@ -1,0 +1,12 @@
+<h3>Created Events</h3>
+
+<% created-events = @user.events %>
+<% created-events.each do |event| %>
+  <div class="user-event-container">
+    <ul>
+      <li class="user-event-title"><%=event.title%></li>
+      <li class="user-event-date"><%=event.event-date%></li>
+    </ul>
+
+  </div>
+<% end %>

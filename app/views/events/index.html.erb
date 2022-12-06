@@ -1,0 +1,10 @@
+<h1>Events</h1>
+<% @events.each do |event|%>
+  <div>
+    <h2><%= link_to event.title, event %></h2>
+    <p>
+      Created By: <%= event.creator.email %>
+    </p>
+  </div>
+<% end %>
+  

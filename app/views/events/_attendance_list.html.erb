@@ -1,6 +1,6 @@
 <% @event.attendees.each do |attendee| %>
   <% invite = attendee.invititations.find_by(event_id: @event.id)%>
   <ul class="guest-list">
-    <li><%= attendee.name %></li>
+    <li><%= attendee.email %></li>
   </ul>
 <% end %>

@@ -1,10 +1,18 @@
 class InvitationsController < ApplicationController
   def index
-    @events = Event.all
-    @invitations_events = []
-    @user_invitaions = current_user.invitations
-    @user_invitations.each do |invitation|
-      @invitation_events << invitation.event_id
-    end
+    @invitations = Invitation.all
+  end
+
+  def show 
+  end
+
+  def new
+    event = Event.find(params[:event_id])
+    
+    @invitation = current_user.invitations.build
+  end
+
+  def create 
+    
   end
 end

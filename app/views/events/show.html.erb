@@ -1,6 +1,8 @@
 <h3 id="show-title"> <%= @event.title %> </h3>
 <p><%= @event.event_date %></p>
+<p> Created By: <%= @event.creator.email %> </p>
 <p>Attendees:</p>
 <div>
   <% render 'attendance_list' %>
+  <%= link_to 'Add Attendee', new_invitation_path %>
 </div>

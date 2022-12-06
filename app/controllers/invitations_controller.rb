@@ -1,29 +1,10 @@
 class InvitationsController < ApplicationController
-  
   def index
-    @invitations = Invitation.all
-  end
-
-  def show 
-    @invitation = Invitation.find(params[:id])
-  end
-
-  def new 
-    @invitation = Invitation.new
-  end
-
-  def create
-    @invitation = Invitation.new(invitation_params)
-
-    if @invitation.save
-      redirect_to root_path
-    else
-      render :new
+    @events = Event.all
+    @invitations_events = []
+    @user_invitaions = current_user.invitations
+    @user_invitations.each do |invitation|
+      @invitation_events << invitation.event_id
     end
-  end
-
-  private
-  def invitation_params
-    params.require(:invitation).permit(:event_id, :user_id)
   end
 end

@@ -4,5 +4,9 @@
 <p>Attendees:</p>
 <div>
   <%= render 'attendance_list' %>
-  <%= button_to 'Add Yourself to This Event', invitations_path, params: {user: current_user, event: @event }, :method => :post %>
+  <% if @event.attendees.include?(current_user) %> 
+    <p> You have already joined this event </p>
+  <% else %>
+    <%= button_to 'Add Yourself to This Event', invitations_path, params: {user: current_user, event: @event }, :method => :post %>
+  <% end %>
 </div>

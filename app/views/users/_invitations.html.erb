@@ -1,1 +1,11 @@
-<h1>hi</h1>
+<h1>Attended Events</h1>
+<div>
+  <ul>
+    <% invitations = @user.invitations %>
+    <% invitations.each do |invitation| %>
+      <% event = Event.find(invitation.event_id)%>
+      <li class="user-event-title"><%=event.title%></li>
+      <li class="user-event-date"><%=event.event_date%></li>
+    <% end %>
+  </ul>
+</div>

@@ -3,6 +3,6 @@
 <p> Created By: <%= @event.creator.email %> </p>
 <p>Attendees:</p>
 <div>
-  <% render 'attendance_list' %>
+  <%= render 'attendance_list' %>
   <%= button_to 'Add Yourself to This Event', invitations_path, params: {user: current_user, event: @event }, :method => :post %>
 </div>

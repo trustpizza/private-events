@@ -13,9 +13,11 @@ class InvitationsController < ApplicationController
   end
 
   def create 
-    @invitation = Invitation.new(params)
+    event = Event.find(params[:event])
+    user = User.find(params[:user])
+    @invitation = Invitation.new({event_id: event.id, user_id: user.id})
 
-    if @invitation.save!(params)
+    if @invitation.save
       redirect_to root_path
     else
       render :new

@@ -4,5 +4,5 @@
 <p>Attendees:</p>
 <div>
   <% render 'attendance_list' %>
-  <%= link_to 'Add Yourself to This Event', invitation_path({event_id: @event}), :method => :post %>
+  <%= button_to 'Add Yourself to This Event', invitations_path, params: {user: current_user, event: @event }, :method => :post %>
 </div>

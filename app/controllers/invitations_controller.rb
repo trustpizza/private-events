@@ -13,6 +13,12 @@ class InvitationsController < ApplicationController
   end
 
   def create 
-    
+    @invitation = Invitation.new(params)
+
+    if @invitation.save(params)
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 end

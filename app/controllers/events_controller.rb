@@ -3,6 +3,9 @@ class EventsController < ApplicationController
   
   def index
     @events = Event.all
+    redirect_to new_event_path if @events.empty? 
+    @past_events = Event.past_event
+    @future_events = Event.future_event
   end
 
   def show
@@ -28,5 +31,4 @@ class EventsController < ApplicationController
     params.require(:event).permit(:title, :event_date)
   end
 end
-
 

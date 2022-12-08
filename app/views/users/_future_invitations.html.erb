@@ -1,7 +1,7 @@
 <h1>Future Events</h1>
 <div>
   <ul>
-    <% @user.attended_events.each do |event| %>
+    <% @user.attended_events.future_event.each do |event| %>
       <li><%= link_to event.title, event_path(event) %></li>
       <li>Date: <%= event.event_date %> </li>
     <% end %>

@@ -3,6 +3,6 @@
 
 <div class="user-container">
     <%= render 'created_events' %>
-    <%= render 'past_invitations' %>
-    <%= render 'future_invitations' %>
+    <%= render 'past_invitations' unless @user.attended_events.past_event.empty? %>
+    <%= render 'future_invitations' unless @user.attended_events.future_event.empty? %>
 </div>
